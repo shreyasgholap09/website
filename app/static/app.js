@@ -20,6 +20,7 @@ function escapeHtml(value) {
 async function loadWishes() {
   try {
     const response = await fetch("/api/wishes");
+    if (!response.ok) throw new Error("Could not load wishes");
     renderWishes(await response.json());
   } catch {
     renderWishes([{ name: "the universe", message: "You make the world more interesting just by being in it." }]);
@@ -39,7 +40,10 @@ wishForm.addEventListener("submit", async (event) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     });
-    if (!response.ok) throw new Error("Wish book unavailable");
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({}));
+      throw new Error(error.detail || "Wish book unavailable");
+    }
     const newWish = await response.json();
     const current = [...wishList.querySelectorAll(".wish-card")].map((card) => ({
       message: card.querySelector("p").textContent,
@@ -48,8 +52,8 @@ wishForm.addEventListener("submit", async (event) => {
     renderWishes([newWish, ...current]);
     wishForm.reset();
     formStatus.textContent = "your wish is on the wall ♡";
-  } catch {
-    formStatus.textContent = "the wish book is shy. Try again in a second.";
+  } catch (error) {
+    formStatus.textContent = error.message;
   } finally {
     button.disabled = false;
   }
