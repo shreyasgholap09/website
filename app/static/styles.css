@@ -1,0 +1,75 @@
+:root {
+  --paper: #f6eee5;
+  --paper-deep: #eadccf;
+  --ink: #24343a;
+  --muted: #718085;
+  --coral: #ee8f79;
+  --peach: #f5b8a6;
+  --yellow: #f7cf75;
+  --blue: #b7d4d3;
+  --line: rgba(36, 52, 58, .18);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Manrope", sans-serif;
+  --mono: "DM Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .22; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E"); z-index: 5; mix-blend-mode: multiply; }
+a { color: inherit; }
+.page-shell { max-width: 1340px; margin: 0 auto; padding: 0 5.5vw; overflow: hidden; }
+.topbar { height: 95px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); position: relative; z-index: 2; }
+.wordmark { text-decoration: none; font: 700 24px var(--serif); letter-spacing: -.04em; }
+.wordmark span { color: var(--coral); }
+.date-stamp, .section-label, .eyebrow, .scroll-cue, label, .form-status, footer { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.date-stamp { color: var(--muted); }
+.hero { min-height: 690px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 6vw; padding: 70px 0 95px; }
+.eyebrow, .section-label { color: var(--coral); margin: 0 0 26px; }
+h1, h2, p { margin-top: 0; }
+h1 { font: 500 clamp(3.5rem, 7vw, 7.4rem)/.91 var(--serif); letter-spacing: -.065em; max-width: 720px; margin-bottom: 34px; }
+h1 em { color: var(--coral); font-style: italic; }
+.hero-note { max-width: 340px; color: var(--muted); line-height: 1.75; font-size: 15px; }
+.scroll-cue { display: inline-flex; gap: 12px; align-items: center; color: var(--ink); text-decoration: none; margin-top: 48px; }
+.scroll-cue span { color: var(--coral); font-size: 20px; font-family: var(--sans); }
+.hero-art { min-height: 510px; position: relative; display: grid; place-items: center; }
+.sun-disc { width: min(35vw, 440px); aspect-ratio: 1; background: var(--peach); border-radius: 50%; position: absolute; top: 25px; right: 2%; }
+.hero-art::after { content: ""; width: 75%; height: 45%; background: var(--blue); position: absolute; bottom: 20px; left: 8%; transform: rotate(-8deg); z-index: 0; }
+.cake, .cake-shadow, .spark, .art-caption { z-index: 1; position: absolute; }
+.cake { width: min(310px, 60%); height: 250px; bottom: 112px; }
+.cake-shadow { width: 55%; height: 22px; border-radius: 50%; background: rgba(36,52,58,.14); bottom: 105px; }
+.plate { width: 100%; height: 18px; border-radius: 50%; background: var(--ink); position: absolute; bottom: 0; }
+.cake-body { position: absolute; width: 78%; height: 112px; left: 11%; bottom: 14px; background: var(--yellow); border-radius: 8px 8px 16px 16px; border: 3px solid var(--ink); }
+.icing { position: absolute; width: 84%; height: 54px; left: 8%; top: 74px; background: var(--coral); border: 3px solid var(--ink); border-radius: 12px 12px 22px 22px; z-index: 2; }
+.icing::after, .icing::before { content: ""; position: absolute; width: 16px; height: 20px; background: var(--coral); border: 3px solid var(--ink); border-top: 0; border-radius: 0 0 12px 12px; bottom: -20px; }
+.icing::before { left: 25%; } .icing::after { right: 25%; }
+.candle { width: 20px; height: 77px; background: var(--blue); border: 3px solid var(--ink); position: absolute; z-index: 3; top: 3px; left: calc(50% - 10px); }
+.candle i { position: absolute; width: 18px; height: 27px; left: -2px; top: -29px; background: var(--coral); border: 3px solid var(--ink); border-radius: 80% 20% 80% 20%; transform: rotate(45deg); }
+.spark { font-size: 26px; color: var(--ink); } .spark-one { right: 10%; top: 16%; } .spark-two { left: 8%; top: 34%; font-size: 20px; }
+.confetti { position: absolute; z-index: 1; font: 700 18px var(--sans); }
+.confetti-one { color: var(--coral); right: 20%; top: 39%; animation: float 4s ease-in-out infinite; }
+.confetti-two { color: var(--ink); left: 17%; top: 20%; transform: rotate(28deg); animation: float 5s ease-in-out .4s infinite; }
+.confetti-three { color: var(--yellow); right: 4%; bottom: 27%; font-size: 23px; animation: float 4.5s ease-in-out .8s infinite; }
+.birthday-badge { position: absolute; z-index: 2; left: 1%; bottom: 28%; width: 112px; height: 112px; display: grid; place-content: center; border: 2px solid var(--ink); border-radius: 50%; background: var(--yellow); color: var(--ink); font: 10px/1.1 var(--mono); text-align: center; text-transform: uppercase; transform: rotate(-12deg); }
+.birthday-badge strong { color: var(--coral); font-size: 15px; }
+.flower-doodle { position: absolute; z-index: 2; right: 1%; bottom: 11%; color: var(--coral); font-size: 44px; transform: rotate(16deg); }
+.hero-art::before { content: ""; position: absolute; width: 120px; height: 55px; right: 1%; top: 8%; border-top: 2px solid var(--ink); border-radius: 50%; transform: rotate(-18deg); opacity: .7; }
+.art-caption { bottom: 12px; right: 6%; font: 700 12px/1.3 var(--mono); text-align: right; text-transform: uppercase; } .art-caption span { color: var(--coral); font-weight: 400; }
+.letter-section, .wish-book { border-top: 1px solid var(--line); padding: 68px 0 110px; position: relative; }
+.letter-section::after { content: "♡  ✦  ♡"; position: absolute; right: 0; top: 52px; color: var(--coral); font: 20px var(--serif); letter-spacing: .35em; transform: rotate(8deg); }
+.letter-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 10vw; }
+.big-quote { font: 500 clamp(2.2rem, 4vw, 4.25rem)/1.02 var(--serif); letter-spacing: -.05em; max-width: 660px; }
+.letter-copy { color: var(--muted); line-height: 1.8; max-width: 390px; padding-top: 14px; }
+.signature { margin-top: 50px; color: var(--ink); font: 16px/1.4 var(--serif); } .signature strong { font-weight: 700; } .signature span { color: var(--coral); font-size: 24px; margin-left: 8px; }
+.wish-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 44px; }
+h2 { font: 500 clamp(3rem, 6vw, 6.3rem)/.9 var(--serif); letter-spacing: -.06em; margin-bottom: 0; } .wish-heading p { color: var(--muted); max-width: 220px; line-height: 1.6; margin-bottom: 4px; }
+.wish-layout { display: grid; grid-template-columns: minmax(260px, .7fr) 1.3fr; gap: 8vw; align-items: start; }
+.wish-form { background: var(--ink); color: var(--paper); padding: 30px; display: flex; flex-direction: column; }
+label { margin-bottom: 10px; color: var(--peach); } input, textarea { border: 0; border-bottom: 1px solid rgba(246,238,229,.35); background: transparent; color: var(--paper); font: 15px var(--sans); padding: 8px 0 14px; margin-bottom: 27px; outline: none; } textarea { min-height: 110px; resize: vertical; } input::placeholder, textarea::placeholder { color: rgba(246,238,229,.45); } input:focus, textarea:focus { border-color: var(--peach); }
+button { border: 0; cursor: pointer; background: var(--coral); color: var(--ink); font: 700 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: 17px; text-align: left; } button span { float: right; font-size: 18px; line-height: 10px; } button:hover { background: var(--yellow); } .form-status { min-height: 16px; margin: 14px 0 0; color: var(--peach); line-height: 1.5; }
+.wish-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.wish-card { padding: 24px; min-height: 160px; background: var(--paper-deep); display: flex; flex-direction: column; justify-content: space-between; animation: reveal .5s both; } .wish-card:nth-child(2n) { background: var(--blue); transform: translateY(22px); } .wish-card p { font: 500 20px/1.18 var(--serif); letter-spacing: -.02em; } .wish-card small { font: 10px var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+footer { display: flex; justify-content: space-between; padding: 28px 0 38px; border-top: 1px solid var(--line); color: var(--muted); }
+@keyframes reveal { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(8deg); } }
+@media (max-width: 760px) { .page-shell { padding: 0 22px; } .topbar { height: 72px; } .hero { display: flex; flex-direction: column; align-items: stretch; padding: 65px 0 60px; min-height: auto; gap: 30px; } h1 { font-size: clamp(3.2rem, 16vw, 5.5rem); } .hero-art { min-height: 390px; } .sun-disc { width: 310px; right: 0; } .cake { bottom: 82px; } .cake-shadow { bottom: 75px; } .hero-art::after { bottom: 10px; } .birthday-badge { left: 0; bottom: 24%; width: 92px; height: 92px; } .birthday-badge strong { font-size: 13px; } .flower-doodle { right: -2%; bottom: 7%; font-size: 35px; } .hero-art::before { right: -6%; } .letter-grid, .wish-layout { grid-template-columns: 1fr; gap: 38px; } .letter-section, .wish-book { padding: 50px 0 70px; } .letter-section::after { top: 35px; font-size: 16px; } .wish-heading { display: block; } .wish-heading p { margin-top: 20px; } .wish-list { grid-template-columns: 1fr; } .wish-card:nth-child(2n) { transform: none; } footer { gap: 20px; line-height: 1.5; } }

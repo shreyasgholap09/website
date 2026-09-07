@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5b8a6" />
+  <title>For Swara, always</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="topbar" aria-label="Main navigation">
+      <a class="wordmark" href="#top">for <span>Swara</span></a>
+      <span class="date-stamp">the main character · today</span>
+    </nav>
+
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">a small Gift from me · for Swara</p>
+        <h1>Today is a good day to celebrate <em>Swara.</em></h1>
+        <p class="hero-note">For the friend who makes ordinary Tuesdays feel like stories worth keeping. The world is brighter with you in it.</p>
+        <a class="scroll-cue" href="#wish-book"><span>↓</span> open your little book</a>
+      </div>
+      <div class="hero-art" aria-label="A birthday cake with one candle for Swara" role="img">
+        <div class="sun-disc"></div>
+        <div class="spark spark-one">✦</div>
+        <div class="spark spark-two">✧</div>
+        <div class="confetti confetti-one">●</div>
+        <div class="confetti confetti-two">╱</div>
+        <div class="confetti confetti-three">✦</div>
+        <div class="birthday-badge">today<br><strong>is yours</strong></div>
+        <div class="flower-doodle">✽</div>
+        <div class="cake-shadow"></div>
+        <div class="cake">
+          <div class="candle"><i></i></div>
+          <div class="icing"></div>
+          <div class="cake-body"></div>
+          <div class="plate"></div>
+        </div>
+        <p class="art-caption">make a wish, Swara<br><span>and then make it happen</span></p>
+      </div>
+    </section>
+
+    <section class="letter-section">
+      <div class="section-label">01 / a note</div>
+      <div class="letter-grid">
+        <p class="big-quote">“Some people arrive and quietly make the world feel more like home.”</p>
+        <div class="letter-copy">
+          <p>That is you, Swara, by the way. You bring the good kind of chaos, the perfectly timed voice notes, and the rare magic of being completely yourself.</p>
+          <p>So here’s to another lap around the sun with more of the things that make you light up. You deserve a year that feels like your favorite song.</p>
+          <p class="signature">with all my love,<br><strong>your forever person</strong> <span>♡</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wish-book" id="wish-book">
+      <div class="section-label">02 / leave a little something</div>
+      <div class="wish-heading">
+        <h2>The wish book</h2>
+        <p>A tiny wall of good things, from people who are very glad Swara exists.</p>
+      </div>
+      <div class="wish-layout">
+        <form class="wish-form" id="wish-form">
+          <label for="name">your name</label>
+          <input id="name" name="name" maxlength="60" placeholder="the person typing" required />
+          <label for="message">your birthday wish</label>
+          <textarea id="message" name="message" maxlength="280" placeholder="something she should remember today..." required></textarea>
+          <button type="submit">pin your wish <span>↗</span></button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+        <div class="wish-list" id="wish-list" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <footer>
+      <span>made with unreasonable amounts of affection</span>
+      <span>♡ 2026</span>
+    </footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
