@@ -31,7 +31,7 @@ wishForm.addEventListener("submit", async (event) => {
   const button = wishForm.querySelector("button");
   button.disabled = true;
   formStatus.textContent = "pinning your wish...";
-  const payload = Object.fromEntries(new FormData(wishForm));
+  const payload = { message: new FormData(wishForm).get("message") };
 
   try {
     const response = await fetch("/api/wishes", {

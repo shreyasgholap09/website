@@ -32,7 +32,7 @@ class Wish(Base):
 
 
 class WishCreate(BaseModel):
-    name: str = Field(min_length=1, max_length=60)
+    name: str = Field(default="A friend", min_length=1, max_length=60)
     message: str = Field(min_length=1, max_length=280)
 
 

@@ -22,6 +22,12 @@
         <p class="eyebrow">a small Gift from me · for Swara</p>
         <h1>Today is a good day to celebrate <em>Swara.</em></h1>
         <p class="hero-note">For the friend who makes ordinary Tuesdays feel like stories worth keeping. The world is brighter with you in it.</p>
+        <form class="wish-form hero-wish-form" id="wish-form">
+          <label for="message">leave Swara a birthday wish</label>
+          <textarea id="message" name="message" maxlength="280" placeholder="something she should remember today..." required></textarea>
+          <button type="submit">pin your wish <span>↗</span></button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
         <a class="scroll-cue" href="#wish-book"><span>↓</span> open your little book</a>
       </div>
       <div class="hero-art" aria-label="A birthday cake with one candle for Swara" role="img">
@@ -49,7 +55,7 @@
       <div class="letter-grid">
         <p class="big-quote">“Some people arrive and quietly make the world feel more like home.”</p>
         <div class="letter-copy">
-          <p>That is you, Swara, by the way. You bring the good kind of chaos, the perfectly timed voice notes, and the rare magic of being completely yourself.</p>
+          <p>That is you, Swara, Happy Birthday! 🎂✨ May you always find happiness in the choices you make, peace in the journey you take, and success in everything you do. Wishing you a wonderful year ahead. Take care and enjoy your special day! 😊.</p>
           <p>So here’s to another lap around the sun with more of the things that make you light up. You deserve a year that feels like your favorite song.</p>
           <p class="signature">with all my love,<br><strong>your forever person</strong> <span>♡</span></p>
         </div>
@@ -63,14 +69,6 @@
         <p>A tiny wall of good things, from people who are very glad Swara exists.</p>
       </div>
       <div class="wish-layout">
-        <form class="wish-form" id="wish-form">
-          <label for="name">your name</label>
-          <input id="name" name="name" maxlength="60" placeholder="the person typing" required />
-          <label for="message">your birthday wish</label>
-          <textarea id="message" name="message" maxlength="280" placeholder="something she should remember today..." required></textarea>
-          <button type="submit">pin your wish <span>↗</span></button>
-          <p class="form-status" id="form-status" aria-live="polite"></p>
-        </form>
         <div class="wish-list" id="wish-list" aria-live="polite"></div>
       </div>
     </section>
